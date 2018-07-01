@@ -6,24 +6,30 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { SafeHTMLPipe } from './safe-html.pipe';
+import { UserinfoComponent } from './userinfo/userinfo.component';
 
 const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
-  { path: '',
-    component: SurveyComponent,
+  { path: 'user',
+    component: UserinfoComponent,
     pathMatch: 'full'
   },
-  // { path: '**',
-  //   component: HomeComponent,
-  //   pathMatch: 'full'
-  // }
+  { path: '',
+    component: UserinfoComponent,
+    pathMatch: 'full'
+  },
+  { path: '**',
+    component: UserinfoComponent,
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     SurveyComponent,
-    SafeHTMLPipe
+    SafeHTMLPipe,
+    UserinfoComponent
   ],
   imports: [
     BrowserModule,
