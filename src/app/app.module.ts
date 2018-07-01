@@ -2,11 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { SafeHTMLPipe } from './safe-html.pipe';
 import { UserinfoComponent } from './userinfo/userinfo.component';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyA9Guncsjq16oLQexy7dgWA-PAxRu62rPE",
+  authDomain: "thoughtfire-2e4db.firebaseapp.com",
+  databaseURL: "https://thoughtfire-2e4db.firebaseio.com",
+  projectId: "thoughtfire-2e4db",
+  storageBucket: "thoughtfire-2e4db.appspot.com",
+  messagingSenderId: "609986085276"
+};
 
 const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
@@ -35,7 +46,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(
-      appRoutes)
+      appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

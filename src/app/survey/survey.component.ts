@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserinfoService } from '../userinfo.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-survey',
