@@ -1,0 +1,44 @@
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+tr:first-child {
+  background-color: black;
+  color: white;
+}
+
+tr:not(#headerRow):nth-child(even) {
+  background-color: #e7e7e7
+}
+
+tr:not(#headerRow):nth-child(odd) {
+  background-color: white;
+}
+
+#headerRow {
+  text-transform: uppercase;
+}
+
+th, td {
+  padding-right: 30px;
+}
+
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+td:first-child {
+  padding-left: 10px;
+}
+
+.sum {
+  text-align: center;
+  display: inline-block;
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}

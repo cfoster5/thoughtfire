@@ -1,0 +1,360 @@
+<!-- REVIEW: NEED NGMODEL FOR EACH SELECT; CAN WE USE ONE NGMODEL FOR EACH COLUMN? -->
+<!-- REVIEW: COULD CREATE OBJECT FOR COLUMN AND EACH CELL WOULD BE PROPERTY -->
+<table (change)="change($event.currentTarget)">
+  <tr id="headerRow">
+    <th></th>
+    <th>Column1</th>
+    <th>Column2</th>
+    <th>Column3</th>
+    <th>Column4</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Alert
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Poised
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Ready
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Eager
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Patient
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Diligent
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Forceful
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Prepared
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Doing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Childlike
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Observing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Realistic
+    </td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Experiencing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Diversifying
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Waiting
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Consolidating
+    </td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Reserved
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Serious
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Fun-loving
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Playful
+    </td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Trial & Error
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Alternatives
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Pondering
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Evaluating
+    </td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Action
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Divergence
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Abstract
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Convergence
+    </td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Direct
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Possibilites
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Conceptual
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Practicalities
+    </td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Involved
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Changing perspectives
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Theoretical
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Focusing
+    </td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Quiet
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Trustworthy
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Responsible
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Imaginative
+    </td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Implementing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Visualizing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Describing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Zeroing-In
+    </td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Hands-on
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Future-oriented
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Reading
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Detail-oriented
+    </td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Physical
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Creating options
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Mental
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Deciding
+    </td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Impersonal
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Proud
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Hopeful
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Fearful
+    </td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Practicing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Transforming
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Thinking
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Choosing
+    </td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Handling
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Speculating
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Contemplating
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Judging
+    </td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Sympathetic
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Pragmatic
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Emotional
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Procrastinating
+    </td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Contact
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Novelizing
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Reflection
+    </td>
+    <td>
+      <select [innerHtml]="dropdown | safeHTML"></select>
+      Making sure
+    </td>
+  </tr>
+</table>
+
+<div>
+  <div class="sum">{{col1}}</div> +
+  <div class="sum">{{col2}}</div> +
+  <div class="sum">{{col3}}</div> +
+  <div class="sum">{{col4}}</div> = 120
+</div>
