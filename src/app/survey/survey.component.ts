@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserinfoService } from '../userinfo.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-survey',
@@ -18,7 +21,12 @@ export class SurveyComponent implements OnInit {
   col3: number;
   col4: number;
 
-  constructor() { }
+  constructor(public userSvc: UserinfoService, private router: Router, private route: ActivatedRoute) {
+    console.log("userInfo", this.userSvc.userInfo)
+    if (!this.userSvc.userInfo) {
+        this.router.navigate(['../'], { relativeTo: this.route })
+    }
+  }
 
   ngOnInit() {
   }
