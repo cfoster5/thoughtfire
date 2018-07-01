@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import * as firebase from 'firebase/app';
 
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
@@ -34,6 +35,8 @@ const appRoutes: Routes = [
     pathMatch: 'full'
   }
 ];
+
+firebase.initializeApp(firebaseConfig)
 
 @NgModule({
   declarations: [
