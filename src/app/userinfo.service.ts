@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserinfoService {
 
-  userInfo: Array<{ firstName: string, lastName: string, email: string }>;
+  userInfo;
 
   constructor() { }
 }

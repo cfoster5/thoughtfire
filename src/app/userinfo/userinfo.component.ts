@@ -25,7 +25,7 @@ export class UserinfoComponent implements OnInit {
 
     if (regexName.test(this.firstName) && regexName.test(this.lastName) && regexEmail.test(this.email)) {
       this.router.navigate(['/survey'], { relativeTo: this.route })
-      this.userSvc.userInfo = [{firstName: this.firstName, lastName: this.lastName, email: this.email}]
+      this.userSvc.userInfo = {firstName: this.firstName, lastName: this.lastName, email: this.email}
       console.log("userInfo", this.userSvc.userInfo)
     }
     else {
