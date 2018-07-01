@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 <table (change)="change($event.currentTarget)">
   <tr id="headerRow">
     <th></th>
@@ -6,7 +8,7 @@
     <th>Column3</th>
     <th>Column4</th>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[0] && rowResults[0] != 10}">
     <td>1</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -25,7 +27,7 @@
       Eager
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[1] && rowResults[1] != 10}">
     <td>2</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -44,7 +46,7 @@
       Prepared
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[2] && rowResults[2] != 10}">
     <td>3</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -63,7 +65,7 @@
       Realistic
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[3] && rowResults[3] != 10}">
     <td>4</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -82,7 +84,7 @@
       Consolidating
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[4] && rowResults[4] != 10}">
     <td>5</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -101,7 +103,7 @@
       Playful
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[5] && rowResults[5] != 10}">
     <td>6</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -120,7 +122,7 @@
       Evaluating
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[6] && rowResults[6] != 10}">
     <td>7</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -139,7 +141,7 @@
       Convergence
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[7] && rowResults[7] != 10}">
     <td>8</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -158,7 +160,7 @@
       Practicalities
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[8] && rowResults[8] != 10}">
     <td>9</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -177,7 +179,7 @@
       Focusing
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[9] && rowResults[9] != 10}">
     <td>10</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -196,7 +198,7 @@
       Imaginative
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[10] && rowResults[10] != 10}">
     <td>11</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -215,7 +217,7 @@
       Zeroing-In
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[11] && rowResults[12] != 10}">
     <td>12</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -234,7 +236,7 @@
       Detail-oriented
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[12] && rowResults[12] != 10}">
     <td>13</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -253,7 +255,7 @@
       Deciding
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[13] && rowResults[13] != 10}">
     <td>14</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -272,7 +274,7 @@
       Fearful
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[14] && rowResults[14] != 10}">
     <td>15</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -291,7 +293,7 @@
       Choosing
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[15] && rowResults[15] != 10}">
     <td>16</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -310,7 +312,7 @@
       Judging
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[16] && rowResults[16] != 10}">
     <td>17</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -329,7 +331,7 @@
       Procrastinating
     </td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'error': rowResults[17] && rowResults[17] != 10}">
     <td>18</td>
     <td>
       <select [innerHtml]="dropdown | safeHTML"></select>
@@ -356,3 +358,9 @@
   <div class="sum">{{col3}}</div> +
   <div class="sum">{{col4}}</div> = 120
 </div>
+
+<!-- <body class="text-center"> -->
+  <form class="form-signin">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="continue()">Continue</button>
+  </form>
+<!-- </body> -->
