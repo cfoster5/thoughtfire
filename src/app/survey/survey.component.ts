@@ -71,7 +71,7 @@ export class SurveyComponent implements OnInit {
     console.log("col4 sum", this.col4)
   }
 
-  continue() {
+  continuePressed() {
     // TODO: ROW VALIDATION
     // GET VALUE OF EVERY 4 ITEMS; IF SUM IS NOT 10, CREATE PROPERTY WITH BOOLEAN
 
