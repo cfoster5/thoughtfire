@@ -42,6 +42,7 @@ export class SurveyComponent implements OnInit {
     this.col3 = 0;
     this.col4 = 0;
 
+    // REVIEW: LOOP THROUGH ALL SELECT VALUES ITERATING BY 4; GET SUM OF COLUMN'S SELECT VALUES EXCLUDING SPECIFIED INDEXES
     for (var i = 0; i < selects.length; i += 4) {
         if (i != 0 && i != 4 && i != 16 && i != 36 && i != 52 && i != 64) {
           this.col1 += parseInt(selects[i].value);
@@ -72,9 +73,6 @@ export class SurveyComponent implements OnInit {
   }
 
   continuePressed() {
-    // TODO: ROW VALIDATION
-    // GET VALUE OF EVERY 4 ITEMS; IF SUM IS NOT 10, CREATE PROPERTY WITH BOOLEAN
-
     let values = []
 
     var selects = document.getElementsByTagName('select')
@@ -87,6 +85,7 @@ export class SurveyComponent implements OnInit {
 
     // console.log(values)
 
+    // REVIEW: LOOP THROUGH ALL SELECT VALUES; PUSH SUM OF EVERY 4 ITEMS TO ARRAY
     this.rowResults = [];
     var counter = 0;
     var sum = 0;
@@ -103,7 +102,6 @@ export class SurveyComponent implements OnInit {
     }
 
     console.log("rowSums", this.rowResults)
-
 
     let data = {
       firstName: this.userSvc.userInfo.firstName,
