@@ -5,11 +5,14 @@ import { FormsModule }   from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import * as firebase from 'firebase/app';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { SafeHTMLPipe } from './safe-html.pipe';
 import { UserinfoComponent } from './userinfo/userinfo.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AboutSurveyComponent } from './aboutsurvey/aboutsurvey.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA9Guncsjq16oLQexy7dgWA-PAxRu62rPE",
@@ -24,6 +27,14 @@ const appRoutes: Routes = [
   { path: 'survey', component: SurveyComponent },
   { path: 'user',
     component: UserinfoComponent,
+    pathMatch: 'full'
+  },
+  { path: 'profile',
+    component: ProfileComponent,
+    pathMatch: 'full'
+  },
+  { path: 'about',
+    component: AboutSurveyComponent,
     pathMatch: 'full'
   },
   { path: '',
@@ -43,7 +54,9 @@ firebase.initializeApp(firebaseConfig)
     AppComponent,
     SurveyComponent,
     SafeHTMLPipe,
-    UserinfoComponent
+    UserinfoComponent,
+    ProfileComponent,
+    AboutSurveyComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +64,8 @@ firebase.initializeApp(firebaseConfig)
     RouterModule.forRoot(
       appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
