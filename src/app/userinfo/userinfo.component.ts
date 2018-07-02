@@ -39,7 +39,7 @@ export class UserinfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  continue() {
+  continuePressed() {
     let regexName = /^[a-z ,.'-]+$/i
     let regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
