@@ -9,28 +9,32 @@
     <title>Profile</title>
   </head>
 
-  <body class="text-center">
+  <body class="text-center" style="padding-top: 40px; padding-bottom: 40px;">
     <form class="form-signin">
       <img src="../../assets/logo.png" alt="" style="height: 50px;">
-    </form>
 
     <div style="display: block; margin-top: 20px; margin-bottom: 20px;">
-      <canvas baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [legend]=false [chartType]="radarChartType" [options]="radarChartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      <canvas baseChart height="200" [datasets]="radarChartData" [labels]="radarChartLabels" [legend]=false [chartType]="radarChartType" [options]="radarChartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      <!-- <canvas height="200" baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [legend]=false [chartType]="radarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
     </div>
 
-    <h6 style="text-transform: uppercase;">
+    <h6 style="text-transform: uppercase; margin: 0px 37.5px 0px 37.5px;">
       <b>Creative Problem Solving Profile</b>
     </h6>
-    <h6 style="margin-top: 15px;">
-      Understanding your profile
+    <h6 style="margin: 15px 47.5px 0px 47.5px; text-align: left">
+      <b>Understanding your profile</b>
     </h6>
-      <p style="padding: 0px 10px 100px 10px;">
-        Columns 1, 2, 3 and 4 indicate your unique orientation to gaining and using knowledge for creative problem solving:<br>
-        COLUMN 1: Gaining knowledge by Experiencing (Direct personal involvement)<br>
-        COLUMN 2: Using knowledge for Ideation (The generation of options without judgment)<br>
-        COLUMN 3: Gaining knowledge by Thinking (Detached abstract theorizing)<br>
-        COLUMN 4: Using knowledge for Evaluation (The application of judgment to options)<br><br>
+      <!-- <p style="padding: 0px 10px 100px 10px; text-align: left;"> -->
+      <p style="padding: 0px 47.5px 0px 47.5px; text-align: left;">
+        Columns 1, 2, 3 and 4 indicate your unique orientation to gaining and using knowledge for creative problem solving:<br><br>
+        <b>COLUMN 1:</b> Gaining knowledge by Experiencing (Direct personal involvement)<br>
+        <b>COLUMN 2:</b> Using knowledge for Ideation (The generation of options without judgment)<br>
+        <b>COLUMN 3:</b> Gaining knowledge by Thinking (Detached abstract theorizing)<br>
+        <b>COLUMN 4:</b> Using knowledge for Evaluation (The application of judgment to options)<br><br>
         Your profile is your own unique blend of the four quadrants. It’s your“shape” that counts. The quadrant in which your profile is most dominant indicates your strongest orientation. The other quadrants represent secondary styles accordingly.
       </p>
+
+    </form>
   </body>
+
 </html>

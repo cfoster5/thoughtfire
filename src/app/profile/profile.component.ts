@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  // styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
 
@@ -50,7 +50,12 @@ export class ProfileComponent implements OnInit {
   public radarChartType:string = 'radar';
 
   public radarChartOptions: any = {
-    responsive: true
+    // responsive: true
+    layout: {
+        padding: {
+            bottom: 5 // REVIEW: ADDED TO FIX TEXT CUTOFF
+        }
+    }
   }
 
   // events
