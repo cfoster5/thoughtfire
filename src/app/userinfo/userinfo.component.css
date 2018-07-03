@@ -67,3 +67,10 @@ img {
   position: relative;
   top: -20px;
 }
+
+/* Custom CSS starts */
+
+
+#inputEmail{
+  border-radius: .25rem;
+}
