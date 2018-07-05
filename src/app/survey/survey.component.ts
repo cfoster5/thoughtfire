@@ -3,6 +3,8 @@ import { UserinfoService } from '../userinfo.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import * as firebase from 'firebase/app';
+import { NgProgress } from 'ngx-progressbar';
+import { Questions } from '../questions'
 
 @Component({
   selector: 'app-survey',
@@ -12,23 +14,30 @@ import * as firebase from 'firebase/app';
 export class SurveyComponent implements OnInit {
 
   dropdown: string = `
+    <select>
       <option [ngValue]="1">1</option>
       <option [ngValue]="2">2</option>
       <option [ngValue]="3">3</option>
       <option [ngValue]="4">4</option>
+    </select>
     `
-  col1: number;
-  col2: number;
-  col3: number;
-  col4: number;
+  col1: number = 0;
+  col2: number = 0;
+  col3: number = 0;
+  col4: number = 0;
 
-  rowResults = [];
+  counter: number = 0;
 
-  constructor(public userSvc: UserinfoService, private router: Router, private route: ActivatedRoute) {
+  valueCount: number;
+
+  constructor(public userSvc: UserinfoService, private router: Router, private route: ActivatedRoute, public ngProgress: NgProgress, public questions: Questions) {
     console.log("userInfo", this.userSvc.userInfo)
+    console.log(localStorage.getItem('firstName'), localStorage.getItem('lastName'), localStorage.getItem('email'))
     if (!this.userSvc.userInfo) {
         this.router.navigate(['../'], { relativeTo: this.route })
     }
+    // this.ngProgress.set(0);
+    console.log(this.questions.questions.length)
   }
 
   ngOnInit() {
@@ -36,35 +45,28 @@ export class SurveyComponent implements OnInit {
 
   change(event) {
     var selects = event.getElementsByTagName('select')
+    console.log(selects)
 
-    this.col1 = 0;
-    this.col2 = 0;
-    this.col3 = 0;
-    this.col4 = 0;
-
-    // REVIEW: LOOP THROUGH ALL SELECT VALUES ITERATING BY 4; GET SUM OF COLUMN'S SELECT VALUES EXCLUDING SPECIFIED INDEXES
-    for (var i = 0; i < selects.length; i += 4) {
-        if (i != 0 && i != 4 && i != 16 && i != 36 && i != 52 && i != 64) {
+    this.valueCount = 0
+    for (let i = 0; i < selects.length; i++) {
+      this.valueCount += parseInt(selects[i].value);
+      if (this.counter != 0 && this.counter != Number(1) && this.counter != Number(4) && this.counter != Number(9) && this.counter != Number(13) && this.counter != Number(16)) {
+        console.log("will count")
+        if (i == 0) {
           this.col1 += parseInt(selects[i].value);
         }
-    }
-
-    for (var i = 1; i < selects.length; i += 4) {
-      if (i != 1 && i != 5 && i != 17 && i != 37 && i != 53 && i != 65) {
-        this.col2 += parseInt(selects[i].value);
+        if (i == 1) {
+          this.col2 += parseInt(selects[i].value);
+        }
+        if (i == 2) {
+          this.col3 += parseInt(selects[i].value);
+        }
+        if (i == 3) {
+          this.col4 += parseInt(selects[i].value);
+        }
       }
     }
-
-    for (var i = 2; i < selects.length; i += 4) {
-      if (i != 2 && i != 6 && i != 18 && i != 38 && i != 54 && i != 66) {
-        this.col3 += parseInt(selects[i].value);
-      }
-    }
-    for (var i = 3; i < selects.length; i += 4) {
-      if (i != 3 && i != 7 && i != 19 && i != 39 && i != 55 && i != 67) {
-        this.col4 += parseInt(selects[i].value);
-      }
-    }
+    console.log("valueCount", this.valueCount)
 
     console.log("col1 sum", this.col1)
     console.log("col2 sum", this.col2)
@@ -73,36 +75,6 @@ export class SurveyComponent implements OnInit {
   }
 
   continuePressed() {
-    let values = []
-
-    var selects = document.getElementsByTagName('select')
-    // console.log(selects)
-
-    for (let i = 0; i < selects.length; i++) {
-      // console.log(selects[i].value)
-      values.push(selects[i].value)
-    }
-
-    // console.log(values)
-
-    // REVIEW: LOOP THROUGH ALL SELECT VALUES; PUSH SUM OF EVERY 4 ITEMS TO ARRAY
-    this.rowResults = [];
-    var counter = 0;
-    var sum = 0;
-    for(var i = 0; i < values.length; i++){
-      // console.log(values[i])
-      counter++;
-      sum += parseInt(values[i]);
-      // console.log(sum)
-      if(counter === 4 || i === values.length-1){
-        this.rowResults.push(sum);
-        counter = 0;
-        sum = 0;
-      }
-    }
-
-    console.log("rowSums", this.rowResults)
-
     let data = {
       firstName: this.userSvc.userInfo.firstName,
       lastName: this.userSvc.userInfo.lastName,
@@ -113,34 +85,40 @@ export class SurveyComponent implements OnInit {
       col4: this.col4
     }
 
-    console.log(data)
+    if (this.valueCount == 10) {
+      this.counter += 1;
+      console.log(this.counter)
+      this.ngProgress.set(this.counter/this.questions.questions.length);
+      this.valueCount = 0
 
-    let validated: boolean = true;
+      if (this.counter == this.questions.questions.length) {
+        firebase.database().ref('surveys/').push(data);
 
-    for (let i = 0; i < this.rowResults.length; i++) {
-        if (this.rowResults[i] != 10) {
-          validated = false
-        }
+        this.userSvc.userInfo.col1 = this.col1;
+        this.userSvc.userInfo.col2 = this.col2;
+        this.userSvc.userInfo.col3 = this.col3;
+        this.userSvc.userInfo.col4 = this.col4;
+
+        localStorage.setItem('col1', this.userSvc.userInfo.col1);
+        localStorage.setItem('col2', this.userSvc.userInfo.col2);
+        localStorage.setItem('col3', this.userSvc.userInfo.col3);
+        localStorage.setItem('col4', this.userSvc.userInfo.col4);
+
+        this.router.navigate(['/profile'], { relativeTo: this.route })
+      }
     }
+  }
 
-    if (validated) {
-      firebase.database().ref('surveys/').push(data);
-      this.userSvc.userInfo.col1 = this.col1;
-      this.userSvc.userInfo.col2 = this.col2;
-      this.userSvc.userInfo.col3 = this.col3;
-      this.userSvc.userInfo.col4 = this.col4;
-
-      localStorage.setItem('col1', this.userSvc.userInfo.col1);
-      localStorage.setItem('col2', this.userSvc.userInfo.col2);
-      localStorage.setItem('col3', this.userSvc.userInfo.col3);
-      localStorage.setItem('col4', this.userSvc.userInfo.col4);
-
-      this.router.navigate(['/profile'], { relativeTo: this.route })
+  goBack() {
+    if (this.counter) {
+      this.counter -= 1;
+      console.log(this.counter)
+      this.ngProgress.set(this.counter/this.questions.questions.length);
+      this.valueCount = 0
     }
     else {
-      alert("There was an error with your inventory.")
+      this.router.navigate(['/about'], { relativeTo: this.route })
     }
-
   }
 
 }

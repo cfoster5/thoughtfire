@@ -1,10 +1,17 @@
 table {
-  border-collapse: collapse;
+  /* border-collapse: collapse;
   border: 1px solid black;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 5px 1rem;
 }
 
-tr:first-child {
+td {
+  padding-bottom: 10px;
+}
+
+/* tr:first-child {
   background-color: black;
   color: white;
 }
@@ -15,7 +22,7 @@ tr:not(#headerRow):nth-child(even) {
 
 tr:not(#headerRow):nth-child(odd) {
   background-color: white;
-}
+} */
 
 #headerRow {
   text-transform: uppercase;
@@ -25,14 +32,14 @@ th, td {
   padding-right: 30px;
 }
 
-th {
+/* th {
   padding-top: 10px;
   padding-bottom: 10px;
-}
+} */
 
-td:first-child {
+/* td:first-child {
   padding-left: 10px;
-}
+} */
 
 .sum {
   text-align: center;
@@ -106,6 +113,8 @@ body {
 
 button {
   margin-top: 15px;
+  /* background-color: #FF931D; */
+  /* border-color: #FF931D */
 }
 
 .form-control {
@@ -117,6 +126,8 @@ img {
   top: -20px;
 }
 
-.error {
-  background-color: red !important;
+.disabled {
+  background-color: lightgray;
+  color: #a8a8a8;
+  border-color: lightgray;
 }

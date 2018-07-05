@@ -55,7 +55,14 @@ export class ProfileComponent implements OnInit {
         padding: {
             bottom: 5 // REVIEW: ADDED TO FIX TEXT CUTOFF
         }
-    }
+    },
+    // scales: {
+    //     yAxes: [{
+    //         ticks: {
+    //             padding: 10
+    //         }
+    //     }],
+    // }
   }
 
   // events
