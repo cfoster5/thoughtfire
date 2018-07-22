@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutSurveyComponent implements OnInit {
 
+  continueStatus: boolean = false
+
   constructor(private router: Router, private route: ActivatedRoute) {
     let firstName: string = localStorage.getItem('firstName');
     let lastName: string = localStorage.getItem('lastName');
@@ -24,6 +26,16 @@ export class AboutSurveyComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  continuePressed() {
+    if (this.continueStatus) {
+        this.router.navigate(['/survey'], { relativeTo: this.route })
+    }
+    if (!this.continueStatus) {
+        console.log(this.continueStatus)
+        this.continueStatus = true;
+    }
   }
 
 }

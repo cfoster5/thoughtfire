@@ -12,25 +12,40 @@
   <body class="text-center">
     <form class="form-signin">
 
-      <img src="../../assets/logo.png" alt="" style="height: 50px;">
-      <h6 style="text-transform: uppercase;">
-        <b>Creative Problem Solving Inventory</b>
-      </h6>
-      <p style="margin: 10px;">
-        This inventory is designed to describe your method of problem solving. The aim of the inventory is to describe how you problem solve, not to evaluate your problem solving ability. You may find it hard to choose the words that best describe your problem solving style because there are no right or wrong answers. Diuerent characteristics are equally good.
-      </p>
-      <h6 style="margin-top: 15px; text-transform: uppercase;">
-        Instructions
-      </h6>
-      <p style="margin: 10px;">
-        Assign numbers from 1 - 4 to the words that characterize your problem solving style. Higher numbers characterize you more than lower numbers.
-      </p>
+      <!-- <img src="../../assets/logo.png" alt="" style="height: 50px;"> -->
+      <img src="../../assets/logoUpdatedTrim.png" alt="" style="height: 40px;">
+      <div *ngIf="!continueStatus">
+        <h6 style="text-transform: uppercase;">
+          <b>Creative Problem Solving Inventory</b>
+        </h6>
+        <p style="margin: 10px;">
+          This inventory is designed to describe your method of problem solving. The aim of the inventory is to describe how you problem solve, not to evaluate your problem solving ability. You may find it hard to choose the words that best describe your problem solving style because there are no right or wrong answers. Different characteristics are equally good.
+        </p>
+      </div>
+      <div *ngIf="continueStatus">
+        <h6 style="margin-top: 15px; text-transform: uppercase;">
+          Instructions
+        </h6>
+        <!-- <p style="margin: 10px;">
+          Assign numbers from 1 - 4 to the words that characterize your problem solving style. Higher numbers characterize you more than lower numbers.
+        </p> -->
+        <p style="margin: 10px;">Assign numbers from 4 - 1 to the words that characterize your problem solving style.</p>
+
+        <div style="display: flex; justify-content: center; align-items: center; padding: 5px;">
+          <div>BEST characterizes</div>
+          <div class="box">4 - 3 - 2 - 1</div>
+          <!-- <div class="box">2</div> -->
+          <!-- <div class="box" style="border-right: 1px solid black;">3</div> -->
+          <div>LEAST characterizes</div>
+        </div>
+      </div>
 
       <!-- <div>BEST characterizes</div>
       <div class="box">4 - 3 - 2 - 1</div>
       <div>LEAST characterizes</div> -->
 
-      <button class="btn btn-lg btn-primary btn-block" type="button" routerLink="/survey">Continue</button>
+      <!-- <button class="btn btn-lg btn-primary btn-block" type="button" routerLink="/survey">Continue</button> -->
+      <button class="btn btn-lg btn-primary btn-block" type="button" (click)="continuePressed()">Continue</button>
 
     </form>
   </body>
