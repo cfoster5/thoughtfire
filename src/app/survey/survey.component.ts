@@ -123,12 +123,14 @@ export class SurveyComponent implements OnInit {
   }
 
   resetSelections(){
-    let dialogue = confirm("Would you like to reset your selections for this group?");
-    if (dialogue == true) {
-        this.selections = [];
-        console.log("You pressed OK!");
-    } else {
-        console.log("You pressed Cancel!");
+    if (this.selections.length) {
+      let dialogue = confirm("Would you like to reset your selections for this group?");
+      if (dialogue == true) {
+          this.selections = [];
+          console.log("You pressed OK!");
+      } else {
+          console.log("You pressed Cancel!");
+      }
     }
   }
 
