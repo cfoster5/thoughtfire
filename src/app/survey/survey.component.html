@@ -1,40 +1,63 @@
-<ng-progress [showSpinner]="false" [color]="'#FF931D'"></ng-progress>
+<!-- <ng-progress [showSpinner]="false" [thick]="true" [color]="'#FF931D'"></ng-progress> -->
+<ng-progress [showSpinner]="false" [thick]="true" [color]="'#c1272d'"></ng-progress>
 <body class="text-center">
+  <span style="padding: 5px 5px 0 0">{{counter + 1}} / {{questions.questions.length}}</span>
   <form class="form-signin">
 
-    <img src="../../assets/logo.png" alt="" style="height: 50px;">
+    <!-- <img src="../../assets/logo.png" alt="" style="height: 50px;"> -->
+    <img src="../../assets/logoUpdatedTrim.png" alt="" style="height: 40px;">
 
-    <div *ngFor="let question of questions.questions; let i = index" (change)="change($event.currentTarget)">
-      <!-- <div *ngIf="i == counter">
-        <h6 [innerHTML]='dropdown + question.item1 | safeHTML'></h6>
-        <h5 [innerHTML]='dropdown + question.item2 | safeHTML'></h5>
-        <h5 [innerHTML]='dropdown + question.item3 | safeHTML'></h5>
-        <h5 [innerHTML]='dropdown + question.item4 | safeHTML'></h5>
-      </div> -->
+    <!-- <p>Select the words that describe you, from greatest to least.</p> -->
 
-      <table *ngIf="i == counter" style="padding-bottom: 20px;">
-        <tr>
-          <td [innerHTML]='dropdown | safeHTML'></td>
-          <td>{{question.item1}}</td>
-        </tr>
-        <tr>
-          <td [innerHTML]='dropdown | safeHTML'></td>
-          <td>{{question.item2}}</td>
-        </tr>
-        <tr>
-          <td [innerHTML]='dropdown | safeHTML'></td>
-          <td>{{question.item3}}</td>
-        </tr>
-        <tr>
-          <td [innerHTML]='dropdown | safeHTML'></td>
-          <td>{{question.item4}}</td>
-        </tr>
-      </table>
+    <p>Assign numbers from 4 - 1 to the words that characterize your problem solving style.</p>
+
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+      <div>BEST characterizes</div>
+      <div class="box">4 - 3 - 2 - 1</div>
+      <!-- <div class="box">2</div> -->
+      <!-- <div class="box" style="border-right: 1px solid black;">3</div> -->
+      <div>LEAST characterizes</div>
     </div>
 
-    <button [ngClass]="{'disabled': valueCount != 10}" class="btn btn-lg btn-primary btn-block" type="button" (click)="continuePressed()">Continue</button>
 
-    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="goBack()" style="margin-top: 12px;">Go Back</button>
+
+    <div *ngFor="let question of questions.questions; let i = index" (change)="change($event.currentTarget)">
+      <div *ngIf="i == counter">
+        <button [ngClass]="{'selected': selections.includes(question.item1)}" class="btn btn-lg btn-primary surveyButton" type="button" value={{question.item1}} (click)="makeSelection($event)">
+          {{question.item1}}
+          <span *ngIf="selections.includes(question.item1)">
+            {{selections.indexOf(question.item1) - 4 | absolute}}
+          </span>
+        </button>
+        <button [ngClass]="{'selected': selections.includes(question.item2)}" class="btn btn-lg btn-primary surveyButton" type="button" value={{question.item2}} (click)="makeSelection($event)">
+          {{question.item2}}
+          <span *ngIf="selections.includes(question.item2)">
+            {{selections.indexOf(question.item2) - 4 | absolute}}
+          </span>
+        </button>
+        <button [ngClass]="{'selected': selections.includes(question.item3)}" class="btn btn-lg btn-primary surveyButton" type="button" value={{question.item3}} (click)="makeSelection($event)">
+          {{question.item3}}
+          <span *ngIf="selections.includes(question.item3)">
+            {{selections.indexOf(question.item3) - 4 | absolute}}
+          </span>
+        </button>
+        <button [ngClass]="{'selected': selections.includes(question.item4)}" class="btn btn-lg btn-primary surveyButton" type="button" value={{question.item4}} (click)="makeSelection($event)">
+          {{question.item4}}
+          <span *ngIf="selections.includes(question.item4)">
+            {{selections.indexOf(question.item4) - 4 | absolute}}
+          </span>
+        </button>
+      </div>
+
+    </div>
+
+
+    <button [ngClass]="{'disabled': selections.length != 4}" class="btn btn-lg btn-primary btn-block" type="button" style="margin-top: 25px;" (click)="continuePressed()">Continue</button>
+
+    <!-- <button class="btn btn-lg btn-primary btn-block" type="button" (click)="goBack()" style="margin-top: 12px;">Go Back</button> -->
+
+    <button [ngClass]="{'disabled': selections.length == 0}" class="btn btn-lg btn-primary btn-block" type="button" (click)="resetSelections()" style="margin-top: 12px;">Reset</button>
+
 
   </form>
 </body>

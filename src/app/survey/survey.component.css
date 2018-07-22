@@ -112,7 +112,6 @@ body {
 } */
 
 button {
-  margin-top: 15px;
   /* background-color: #FF931D; */
   /* border-color: #FF931D */
 }
@@ -131,3 +130,45 @@ img {
   color: #a8a8a8;
   border-color: lightgray;
 }
+
+.surveyButton {
+  margin-top: 15px;
+  width: 45%;
+  position: relative;
+  white-space: normal;
+  height: 78px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.surveyButton:nth-child(odd) {
+  margin-right: 5%;
+}
+
+.surveyButton:nth-child(even) {
+  margin-left: 5%;
+}
+
+.selected {
+  /* background-color: #FF931D;
+  border-color: #FF931D; */
+  background-color: #c1272d;
+  border-color: #c1272d;
+}
+
+span {
+  position: absolute;
+  top:0px;
+  right:3px;
+  font-size: .85em
+}
+
+.box {
+  /* flex-basis: 150px; */
+  flex-basis: 125px;
+  border: 1px solid black;
+  /* height: 40px; */
+}
+
+/* Red: #ec1d23 */
+/* Maroon: #c1272d */
