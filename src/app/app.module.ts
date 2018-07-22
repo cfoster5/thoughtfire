@@ -14,7 +14,8 @@ import { SafeHTMLPipe } from './safe-html.pipe';
 import { UserinfoComponent } from './userinfo/userinfo.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutSurveyComponent } from './aboutsurvey/aboutsurvey.component';
-import { Questions } from './questions'
+import { Questions } from './questions';
+import { AbsolutePipe } from './absolute.pipe'
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA9Guncsjq16oLQexy7dgWA-PAxRu62rPE",
@@ -58,7 +59,8 @@ firebase.initializeApp(firebaseConfig)
     SafeHTMLPipe,
     UserinfoComponent,
     ProfileComponent,
-    AboutSurveyComponent
+    AboutSurveyComponent,
+    AbsolutePipe
   ],
   imports: [
     BrowserModule,
