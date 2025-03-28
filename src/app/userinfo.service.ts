@@ -7,5 +7,10 @@ export class UserinfoService {
 
   userInfo;
 
-  constructor() { }
+  constructor() {
+    // this.userInfo = {};
+    // this.userInfo.firstName = localStorage.getItem('firstName')
+    // this.userInfo.lastName = localStorage.getItem('lastName')
+    // this.userInfo.email = localStorage.getItem('email')
+  }
 }

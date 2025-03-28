@@ -168,6 +168,10 @@ span {
   flex-basis: 125px;
   border: 1px solid black;
   /* height: 40px; */
+  border-radius: 4px;
+  background-color: #FF931D;
+  border: #FF931D;
+  color: white;
 }
 
 /* Red: #ec1d23 */

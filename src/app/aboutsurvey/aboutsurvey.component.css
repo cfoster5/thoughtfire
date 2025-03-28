@@ -79,3 +79,29 @@ img {
   position: relative;
   top: -20px;
 }
+
+.box {
+  /* flex-basis: 150px; */
+  flex-basis: 125px;
+  border: 1px solid black;
+  /* height: 40px; */
+  padding: 0px;
+  border-radius: 4px;
+  background-color: #FF931D;
+  border: #FF931D;
+  color: white;
+}
+
+td {
+  border: 0px;
+  vertical-align: middle;
+  height:90px;
+}
+
+td:nth-child(odd) {
+  border-right: 1px solid black
+}
+
+tr:nth-child(odd) {
+  border-bottom: 1px solid black
+}

@@ -9,7 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutSurveyComponent implements OnInit {
 
-  continueStatus: boolean = false
+  // continueStatus: boolean = false
+  continueStatus1: boolean = false
+  continueStatus2: boolean = false
 
   constructor(private router: Router, private route: ActivatedRoute) {
     let firstName: string = localStorage.getItem('firstName');
@@ -29,12 +31,23 @@ export class AboutSurveyComponent implements OnInit {
   }
 
   continuePressed() {
-    if (this.continueStatus) {
+    // if (this.continueStatus) {
+    //     this.router.navigate(['/survey'], { relativeTo: this.route })
+    // }
+    if (this.continueStatus1 && this.continueStatus2) {
         this.router.navigate(['/survey'], { relativeTo: this.route })
     }
-    if (!this.continueStatus) {
-        console.log(this.continueStatus)
-        this.continueStatus = true;
+    // if (!this.continueStatus) {
+    //     console.log(this.continueStatus)
+    //     this.continueStatus = true;
+    // }
+    if (!this.continueStatus2 && this.continueStatus1) {
+        console.log(this.continueStatus2)
+        this.continueStatus2 = true;
+    }
+    if (!this.continueStatus1) {
+        console.log(this.continueStatus1)
+        this.continueStatus1 = true;
     }
   }
 

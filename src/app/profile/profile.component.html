@@ -11,10 +11,12 @@
 
   <body class="text-center" style="padding-top: 40px; padding-bottom: 40px;">
     <form class="form-signin">
-      <img src="../../assets/logo.png" alt="" style="height: 50px;">
+      <!-- <img src="../../assets/logo.png" alt="" style="height: 50px;"> -->
+      <img src="../../assets/logoUpdatedTrim.png" alt="" style="height: 40px;">
 
     <div style="display: block; margin-top: 20px; margin-bottom: 20px;">
-      <canvas baseChart height="200" [datasets]="radarChartData" [labels]="radarChartLabels" [legend]=false [chartType]="radarChartType" [options]="radarChartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      <canvas baseChart height="200" [colors] = "chartColors" [datasets]="radarChartData" [labels]="radarChartLabels" [legend]=false [chartType]="radarChartType" [options]="radarChartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      <!-- <canvas baseChart height="200" [colors] = "scatterChartCustomColors" [data]="scatterChartData" [labels]="scatterChartLabels" [legend]=false [chartType]="scatterChartType" [options]="scatterChartOptions" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
       <!-- <canvas height="200" baseChart [datasets]="radarChartData" [labels]="radarChartLabels" [legend]=false [chartType]="radarChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas> -->
     </div>
 
@@ -31,7 +33,7 @@
         <b>COLUMN 2:</b> Using knowledge for Ideation (The generation of options without judgment)<br>
         <b>COLUMN 3:</b> Gaining knowledge by Thinking (Detached abstract theorizing)<br>
         <b>COLUMN 4:</b> Using knowledge for Evaluation (The application of judgment to options)<br><br>
-        Your profile is your own unique blend of the four quadrants. It’s your“shape” that counts. The quadrant in which your profile is most dominant indicates your strongest orientation. The other quadrants represent secondary styles accordingly.
+        Your profile is your own unique blend of the four quadrants. It’s your "shape" that counts. The quadrant in which your profile is most dominant indicates your strongest orientation. The other quadrants represent secondary styles accordingly.
       </p>
 
     </form>

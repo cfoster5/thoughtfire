@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~roboto-fontface/css/roboto/roboto-fontface.css';
+
+.btn {
+  /* background-color: #ec1d23;
+  border-color: #ec1d23; */
+  background-color: #FF931D;
+  border-color: #FF931D;
+}
+.btn:hover {
+  background-color: #FF931D;
+  border-color: #FF931D;
+}
+.btn:active {
+  background-color: #FF931D !important;
+  border-color: #FF931D !important;
+}
+
+* {
+  font-family: Roboto
+}

@@ -14,7 +14,29 @@
 
       <!-- <img src="../../assets/logo.png" alt="" style="height: 50px;"> -->
       <img src="../../assets/logoUpdatedTrim.png" alt="" style="height: 40px;">
-      <div *ngIf="!continueStatus">
+      <!-- <div *ngIf="!continueStatus"> -->
+      <div *ngIf="!continueStatus1 && !continueStatus2">
+
+
+        <h6 style="padding: 15px 0 15px 0; background-color: #c1272d; color: white;">
+          <b><i>What's Your Style?</i></b>
+        </h6>
+        <p>Our psychometric analysis is proven to help you and your team understand one another's <b>creative problem-solving styles.</b></p>
+        <!-- <table class="table" style="border: 0px">
+          <tr>
+            <td><img src="../../assets/BELBINUK-CF-Icon-masked.png" alt="" style="height:50px;"></td>
+            <td><img src="../../assets/light-bulb-silhouette-vector-3.png" alt="" style="height:50px;"></td>
+          </tr>
+          <tr>
+            <td><img src="../../assets/setting-gear-optimize-repair-ui-construct-3a19d87bd6bb29a8-512x512.png" alt="" style="height:50px;"></td>
+            <td><img src="../../assets/742503_multimedia_512x512.png" alt="" style="height:50px;"></td>
+          </tr>
+        </table> -->
+        <img src="../../assets/gridNew.png" alt="" style="margin-top: 24px; width: 100%">
+
+      </div>
+
+      <div *ngIf="continueStatus1 && !continueStatus2">
         <h6 style="text-transform: uppercase;">
           <b>Creative Problem Solving Inventory</b>
         </h6>
@@ -22,9 +44,12 @@
           This inventory is designed to describe your method of problem solving. The aim of the inventory is to describe how you problem solve, not to evaluate your problem solving ability. You may find it hard to choose the words that best describe your problem solving style because there are no right or wrong answers. Different characteristics are equally good.
         </p>
       </div>
-      <div *ngIf="continueStatus">
-        <h6 style="margin-top: 15px; text-transform: uppercase;">
-          Instructions
+      <!-- <div *ngIf="continueStatus"> -->
+      <div *ngIf="continueStatus2">
+        <!-- <h6 style="margin-top: 15px; text-transform: uppercase;"> -->
+        <!-- <h6 style="padding: 15px 0 15px 0; text-transform: uppercase; background-color: #ed1d25; color: white;"> -->
+        <h6 style="padding: 15px 0 15px 0; text-transform: uppercase; background-color: #c1272d; color: white;">
+          <b><i>Instructions</i></b>
         </h6>
         <!-- <p style="margin: 10px;">
           Assign numbers from 1 - 4 to the words that characterize your problem solving style. Higher numbers characterize you more than lower numbers.
@@ -32,11 +57,11 @@
         <p style="margin: 10px;">Assign numbers from 4 - 1 to the words that characterize your problem solving style.</p>
 
         <div style="display: flex; justify-content: center; align-items: center; padding: 5px;">
-          <div>BEST characterizes</div>
+          <div style="font-size: .8rem;"><b><i>BEST</i></b> characterizes</div>
           <div class="box">4 - 3 - 2 - 1</div>
           <!-- <div class="box">2</div> -->
           <!-- <div class="box" style="border-right: 1px solid black;">3</div> -->
-          <div>LEAST characterizes</div>
+          <div style="font-size: .8rem;"><b><i>LEAST</i></b> characterizes</div>
         </div>
       </div>
 

@@ -80,15 +80,21 @@ export class SurveyComponent implements OnInit {
         if (this.counter == this.questions.questions.length) {
           firebase.database().ref('surveys/').push(data);
 
-          this.userSvc.userInfo.col1 = this.col1;
-          this.userSvc.userInfo.col2 = this.col2;
-          this.userSvc.userInfo.col3 = this.col3;
-          this.userSvc.userInfo.col4 = this.col4;
 
-          localStorage.setItem('col1', this.userSvc.userInfo.col1);
-          localStorage.setItem('col2', this.userSvc.userInfo.col2);
-          localStorage.setItem('col3', this.userSvc.userInfo.col3);
-          localStorage.setItem('col4', this.userSvc.userInfo.col4);
+          // this.userSvc.userInfo.col1 = this.col1;
+          // this.userSvc.userInfo.col2 = this.col2;
+          // this.userSvc.userInfo.col3 = this.col3;
+          // this.userSvc.userInfo.col4 = this.col4;
+          //
+          // localStorage.setItem('col1', this.userSvc.userInfo.col1);
+          // localStorage.setItem('col2', this.userSvc.userInfo.col2);
+          // localStorage.setItem('col3', this.userSvc.userInfo.col3);
+          // localStorage.setItem('col4', this.userSvc.userInfo.col4);
+
+          localStorage.setItem('col1', this.col1.toString());
+          localStorage.setItem('col2', this.col2.toString());
+          localStorage.setItem('col3', this.col3.toString());
+          localStorage.setItem('col4', this.col4.toString());
 
           this.router.navigate(['/profile'], { relativeTo: this.route })
         }
